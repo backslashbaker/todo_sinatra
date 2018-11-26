@@ -1,0 +1,14 @@
+<html>
+  <head></head>
+  <body>
+    <form>
+    <input type='text' name='item' />
+    <input type='submit' value='add to list' />
+    </form>
+    <p>
+     <% list_of_items.each do |item| %>
+		<li> <%= item %> </li>
+        <% end %>
+    </p>
+  </body>
+</html>
