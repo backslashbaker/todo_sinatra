@@ -6,7 +6,9 @@
     <input type='submit' value='add to list' />
     </form>
     <p>
-      <%= list_of_items %>
+     <% list_of_items.each do |item| %>
+		<li> <%= item %> </li>
+        <% end %>
     </p>
   </body>
 </html>

@@ -3,11 +3,9 @@ require 'sinatra/reloader'
 
 list_of_items = []
 
-
-
 get '/' do
-    item = params["item"]
+	todo = params["item"]
+	list_of_items << todo
 
-    list_of_items << item
-    erb :index, :locals => {:item => item, :list_of_items => list_of_items}
-  end
+	erb :index, :locals => {:todo => todo, :list_of_items => list_of_items}
+end
