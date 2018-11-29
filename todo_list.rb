@@ -1,11 +1,16 @@
 require 'sinatra'
+require 'slim'
 require 'sinatra/reloader'
 
-list_of_items = []
+
 
 get '/' do
-	todo = params["item"]
-	list_of_items << todo
 
-	erb :index, :locals => {:todo => todo, :list_of_items => list_of_items}
+	slim :index	
+
+end
+
+get '/:task' do
+	@task = params[:task].split('-').join(' ').capitalize
+	slim :task
 end
