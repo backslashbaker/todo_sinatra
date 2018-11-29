@@ -1,17 +1,23 @@
+require 'rubygems'
 require 'sinatra'
 require 'slim'
+require 'dm-postgres-adapter'
 require 'data_mapper'
 require 'sinatra/reloader'
 
-DataMapper.setup(:default, 'postgres://user:password@hostname/database')
+configure :development do
+	DataMapper.setup(:default, 'postgres://user:password@hostname/database')
+end
+
 class Task
 	include DataMapper::Resource
-	property :id, 	Serial
-	property :name,	String, :required => true
+	property :id, 	        Serial
+	property :name,	        String, :required => true
 	property :completed_at, DateTime
 end
 
 DataMapper.finalize
+
 
 get '/' do
 
