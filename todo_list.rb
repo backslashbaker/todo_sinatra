@@ -20,7 +20,7 @@ DataMapper.finalize
 
 
 get '/' do
-
+	@tasks = Task.all
 	slim :index	
 
 end
@@ -31,6 +31,6 @@ get '/:task' do
 end
 
 post '/' do
-	@task = params[:task]
-	slim :task
+	Task.create params[:task]
+	redirect to('/')
 end
