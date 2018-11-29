@@ -1,10 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 require 'slim'
-require 'sinatra/reloader'
 
 configure :development do
-  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'todo', pool: 2, username: 'your_username', password: 'your_password'}
+  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'todo', pool: 2, username: 'derekbaker', password: ''}
 end
 
 
