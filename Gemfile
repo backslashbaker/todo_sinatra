@@ -8,3 +8,4 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem 'rake'
 gem 'pg'
+gem 'activerecord-postgresql-adapter', '~> 0.0.1'
