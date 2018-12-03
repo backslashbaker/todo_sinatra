@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'slim'
+require_relative 'models/task.rb'
 
 configure :development do
   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'todo', pool: 2, username: 'derekbaker', password: ''}
